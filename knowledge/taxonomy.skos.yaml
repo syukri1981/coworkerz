@@ -1,0 +1,171 @@
+# Aether Enterprise Knowledge Taxonomy (SKOS / OWL-Aligned YAML Scheme)
+# Maintained by the Office of the CEO. Every ingested document is auto-classified
+# against these concepts and queued for human-in-the-loop approval.
+scheme:
+  uri: "urn:aether:enterprise:taxonomy"
+  title: "Aether Enterprise SKOS/OWL Knowledge Taxonomy"
+  namespace: "urn:aether:skos:"
+  owlOntology: "urn:aether:owl:EnterpriseKnowledgeGraph"
+
+domains:
+  technology:
+    label: "AI & Cloud Architecture"
+    owner: "CTO"
+  finance:
+    label: "Corporate Finance & Capital"
+    owner: "CFO"
+  operations:
+    label: "Global Operations & Delivery"
+    owner: "COO"
+  governance:
+    label: "Legal, Risk & Regulatory"
+    owner: "CEO"
+  corporate_strategy:
+    label: "Board Strategy, M&A & Pricing"
+    owner: "CEO"
+
+objectProperties:
+  - FUNDED_BY
+  - GATED_BY_METRIC
+  - SATISFIES_REGULATION
+  - OPERATED_BY
+  - UNLOCKS_REVENUE
+  - DEPENDS_ON
+  - MITIGATES_RISK
+  - TARGETS_ACQUISITION
+  - GOVERNED_BY_POLICY
+  - INTEGRATES_WITH
+
+concepts:
+  # --- TECHNOLOGY DOMAIN (CTO) ---
+  - id: "tech:ai-platform"
+    domain: "technology"
+    prefLabel: "Enterprise AI Platform"
+    altLabels: ["llm runtime", "agent runtime", "model gateway", "opencode", "inference engine"]
+    definition: "Core enterprise AI platform, model routing control planes, and autonomous agent services."
+    broader: null
+    related: ["strat:agentic-pricing", "gov:ai-safety-governance"]
+
+  - id: "tech:sovereign-ai-infra"
+    domain: "technology"
+    prefLabel: "Sovereign AI Infrastructure"
+    altLabels: ["sovereign cluster", "frankfurt gpu", "bare-metal gpu", "eu inference nodes", "quantized racks"]
+    definition: "Dedicated regionally resident GPU inference clusters serving regulated sovereign workloads."
+    broader: "tech:ai-platform"
+    related: ["gov:eu-data-residency", "fin:capex-tranche-governance", "ops:emea-delivery-pods"]
+
+  - id: "tech:multicloud-elasticity"
+    domain: "technology"
+    prefLabel: "Multi-Cloud Burst & Latency Engineering"
+    altLabels: ["kubernetes", "multi-cloud", "p95 latency", "semantic caching", "gpu burst", "cloud commit"]
+    definition: "Elastic multi-cloud Kubernetes bursting, semantic token caching, and p95 latency SLO architecture."
+    broader: "tech:ai-platform"
+    related: ["fin:unit-economics-finops", "ops:sla-reliability"]
+
+  - id: "tech:security-zero-trust"
+    domain: "technology"
+    prefLabel: "Zero-Trust Security & Integration Architecture"
+    altLabels: ["zero-trust", "identity federation", "sso", "encryption", "adapter gateway", "technical debt", "api schema"]
+    definition: "Enterprise zero-trust security controls, tenant isolation, cryptographic keys, and post-merger API gateways."
+    broader: null
+    related: ["gov:dora-cyber-resilience", "strat:ma-corporate-dev"]
+
+  # --- FINANCE DOMAIN (CFO) ---
+  - id: "fin:capital-allocation"
+    domain: "finance"
+    prefLabel: "Capital Allocation & Treasury"
+    altLabels: ["capital envelope", "budget", "free cash flow", "fcf", "cash conversion", "treasury"]
+    definition: "Enterprise capital deployment standards, hurdle rates, free cash flow preservation, and balance-sheet policy."
+    broader: null
+    related: ["strat:ma-corporate-dev"]
+
+  - id: "fin:capex-tranche-governance"
+    domain: "finance"
+    prefLabel: "CAPEX/OPEX Tranche & Payback Gates"
+    altLabels: ["40/60 tranche", "payback", "milestone tranche", "capex", "opex", "11-month payback", "hurdle rate"]
+    definition: "Staged release of infrastructure and growth capital gated by verified payback windows and ARR milestones."
+    broader: "fin:capital-allocation"
+    related: ["tech:sovereign-ai-infra", "ops:emea-delivery-pods"]
+
+  - id: "fin:unit-economics-finops"
+    domain: "finance"
+    prefLabel: "Unit Economics, Gross Margin & EBITDA"
+    altLabels: ["gross margin", "ebitda", "arr", "nrr", "net dollar retention", "bps", "finops", "token cost", "cogs"]
+    definition: "SaaS and AI unit economics, 74%+ gross margin floors, compute FinOps, EBITDA expansion, and ARR quality."
+    broader: "fin:capital-allocation"
+    related: ["tech:multicloud-elasticity", "strat:agentic-pricing"]
+
+  # --- OPERATIONS DOMAIN (COO) ---
+  - id: "ops:global-service-delivery"
+    domain: "operations"
+    prefLabel: "Global Service Delivery & Onboarding"
+    altLabels: ["onboarding", "implementation", "solutions engineering", "customer operations", "14-day onboarding"]
+    definition: "Enterprise customer onboarding workflows, solutions architecture delivery, and time-to-value standards."
+    broader: null
+    related: ["ops:sla-reliability"]
+
+  - id: "ops:emea-delivery-pods"
+    domain: "operations"
+    prefLabel: "EMEA Regional Tiger Pods & Go-To-Market Ops"
+    altLabels: ["emea", "dach", "france", "europe", "tiger pods", "regional rollout", "procurement velocity"]
+    definition: "Cross-functional European regional deployment squads accelerating regulated enterprise bookings and rollout."
+    broader: "ops:global-service-delivery"
+    related: ["tech:sovereign-ai-infra", "gov:eu-data-residency", "strat:international-expansion"]
+
+  - id: "ops:sla-reliability"
+    domain: "operations"
+    prefLabel: "Enterprise SLA, Vendor & Incident Governance"
+    altLabels: ["sla", "uptime", "incident", "churn", "retention", "vendor management", "99.95%", "runbook"]
+    definition: "Contractual service-level commitments, vendor resilience tiers, escalation runbooks, and churn mitigation."
+    broader: "ops:global-service-delivery"
+    related: ["tech:multicloud-elasticity", "gov:dora-cyber-resilience"]
+
+  # --- GOVERNANCE DOMAIN (CEO / LEGAL & RISK) ---
+  - id: "gov:eu-data-residency"
+    domain: "governance"
+    prefLabel: "EU GDPR & Sovereign Data Residency"
+    altLabels: ["gdpr", "data residency", "schrems", "pii", "data sovereignty", "eu boundary", "dpa"]
+    definition: "Binding European data residency, GDPR processor obligations, in-region telemetry retention, and DPA controls."
+    broader: null
+    related: ["tech:sovereign-ai-infra", "ops:emea-delivery-pods"]
+
+  - id: "gov:dora-cyber-resilience"
+    domain: "governance"
+    prefLabel: "DORA & Financial Sector Operational Resilience"
+    altLabels: ["dora", "ict risk", "iso 27001", "soc 2", "regulatory audit", "exit strategy", "regulated banking"]
+    definition: "EU Digital Operational Resilience Act (DORA) ICT third-party requirements, audit rights, and multi-cloud exit plans."
+    broader: "gov:eu-data-residency"
+    related: ["tech:security-zero-trust", "ops:sla-reliability"]
+
+  - id: "gov:ai-safety-governance"
+    domain: "governance"
+    prefLabel: "EU AI Act, Model Risk & ACL Governance"
+    altLabels: ["eu ai act", "zero-retention", "acl", "access control", "human review", "model governance", "audit log"]
+    definition: "AI model zero-retention policies, role-based knowledge ACLs, human-in-the-loop review, and EU AI Act compliance."
+    broader: null
+    related: ["tech:ai-platform"]
+
+  # --- CORPORATE STRATEGY DOMAIN (CEO / BOARD) ---
+  - id: "strat:ma-corporate-dev"
+    domain: "corporate_strategy"
+    prefLabel: "M&A, Valuation & Post-Merger Integration"
+    altLabels: ["acquisition", "m&a", "merger", "due diligence", "valuation", "earnout", "pmi", "target", "synergy"]
+    definition: "Board-restricted corporate development, acquisition target diligence, deal structuring, and 90-day PMI playbooks."
+    broader: null
+    related: ["fin:capital-allocation", "tech:security-zero-trust"]
+
+  - id: "strat:agentic-pricing"
+    domain: "corporate_strategy"
+    prefLabel: "Autonomous Agent Packaging & Outcome Pricing"
+    altLabels: ["pricing", "outcome-based", "seat-based", "execution credits", "packaging", "monetization", "cannibalization"]
+    definition: "Hybrid platform-fee plus autonomous execution-credit monetization protecting baseline seat ARR."
+    broader: null
+    related: ["fin:unit-economics-finops", "tech:ai-platform"]
+
+  - id: "strat:international-expansion"
+    domain: "corporate_strategy"
+    prefLabel: "International Market & Enterprise ARR Strategy"
+    altLabels: ["market expansion", "pipeline", "bookings", "board strategy", "annual plan", "enterprise gtm", "market share"]
+    definition: "Multi-quarter geographic expansion targets, strategic enterprise segment positioning, and board OKRs."
+    broader: null
+    related: ["ops:emea-delivery-pods", "fin:capex-tranche-governance"]

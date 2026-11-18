@@ -1,0 +1,212 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix aether: <urn:aether:owl:> .
+
+<urn:aether:enterprise:taxonomy> a skos:ConceptScheme, owl:Ontology ;
+  dct:title "Aether Enterprise SKOS/OWL Knowledge Taxonomy"@en ;
+  owl:versionInfo "v1" ;
+  skos:hasTopConcept <urn:aether:skos:tech:ai-platform>, <urn:aether:skos:tech:security-zero-trust>, <urn:aether:skos:fin:capital-allocation>, <urn:aether:skos:ops:global-service-delivery>, <urn:aether:skos:gov:eu-data-residency>, <urn:aether:skos:gov:ai-safety-governance>, <urn:aether:skos:strat:ma-corporate-dev>, <urn:aether:skos:strat:agentic-pricing>, <urn:aether:skos:strat:international-expansion> ;
+  dct:publisher "Office of the CEO — Aether Enterprise Knowledge Layer" .
+
+aether:FUNDED_BY a owl:ObjectProperty ;
+  rdfs:label "FUNDED_BY"@en ;
+  rdfs:isDefinedBy <urn:aether:enterprise:taxonomy> .
+
+aether:GATED_BY_METRIC a owl:ObjectProperty ;
+  rdfs:label "GATED_BY_METRIC"@en ;
+  rdfs:isDefinedBy <urn:aether:enterprise:taxonomy> .
+
+aether:SATISFIES_REGULATION a owl:ObjectProperty ;
+  rdfs:label "SATISFIES_REGULATION"@en ;
+  rdfs:isDefinedBy <urn:aether:enterprise:taxonomy> .
+
+aether:OPERATED_BY a owl:ObjectProperty ;
+  rdfs:label "OPERATED_BY"@en ;
+  rdfs:isDefinedBy <urn:aether:enterprise:taxonomy> .
+
+aether:UNLOCKS_REVENUE a owl:ObjectProperty ;
+  rdfs:label "UNLOCKS_REVENUE"@en ;
+  rdfs:isDefinedBy <urn:aether:enterprise:taxonomy> .
+
+aether:DEPENDS_ON a owl:ObjectProperty ;
+  rdfs:label "DEPENDS_ON"@en ;
+  rdfs:isDefinedBy <urn:aether:enterprise:taxonomy> .
+
+aether:MITIGATES_RISK a owl:ObjectProperty ;
+  rdfs:label "MITIGATES_RISK"@en ;
+  rdfs:isDefinedBy <urn:aether:enterprise:taxonomy> .
+
+aether:TARGETS_ACQUISITION a owl:ObjectProperty ;
+  rdfs:label "TARGETS_ACQUISITION"@en ;
+  rdfs:isDefinedBy <urn:aether:enterprise:taxonomy> .
+
+aether:GOVERNED_BY_POLICY a owl:ObjectProperty ;
+  rdfs:label "GOVERNED_BY_POLICY"@en ;
+  rdfs:isDefinedBy <urn:aether:enterprise:taxonomy> .
+
+aether:INTEGRATES_WITH a owl:ObjectProperty ;
+  rdfs:label "INTEGRATES_WITH"@en ;
+  rdfs:isDefinedBy <urn:aether:enterprise:taxonomy> .
+
+<urn:aether:skos:tech:ai-platform> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "tech:ai-platform" ;
+  aether:domain "technology" ;
+  skos:prefLabel "Enterprise AI Platform"@en ;
+  skos:altLabel "llm runtime"@en, "agent runtime"@en, "model gateway"@en, "opencode"@en, "inference engine"@en ;
+  skos:topConceptOf <urn:aether:enterprise:taxonomy> ;
+  skos:related <urn:aether:skos:strat:agentic-pricing>, <urn:aether:skos:gov:ai-safety-governance> ;
+  skos:definition "Core enterprise AI platform, model routing control planes, and autonomous agent services."@en .
+
+<urn:aether:skos:tech:sovereign-ai-infra> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "tech:sovereign-ai-infra" ;
+  aether:domain "technology" ;
+  skos:prefLabel "Sovereign AI Infrastructure"@en ;
+  skos:altLabel "sovereign cluster"@en, "frankfurt gpu"@en, "bare-metal gpu"@en, "eu inference nodes"@en, "quantized racks"@en ;
+  skos:broader <urn:aether:skos:tech:ai-platform> ;
+  skos:related <urn:aether:skos:gov:eu-data-residency>, <urn:aether:skos:fin:capex-tranche-governance>, <urn:aether:skos:ops:emea-delivery-pods> ;
+  skos:definition "Dedicated regionally resident GPU inference clusters serving regulated sovereign workloads."@en .
+
+<urn:aether:skos:tech:multicloud-elasticity> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "tech:multicloud-elasticity" ;
+  aether:domain "technology" ;
+  skos:prefLabel "Multi-Cloud Burst & Latency Engineering"@en ;
+  skos:altLabel "kubernetes"@en, "multi-cloud"@en, "p95 latency"@en, "semantic caching"@en, "gpu burst"@en, "cloud commit"@en ;
+  skos:broader <urn:aether:skos:tech:ai-platform> ;
+  skos:related <urn:aether:skos:fin:unit-economics-finops>, <urn:aether:skos:ops:sla-reliability> ;
+  skos:definition "Elastic multi-cloud Kubernetes bursting, semantic token caching, and p95 latency SLO architecture."@en .
+
+<urn:aether:skos:tech:security-zero-trust> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "tech:security-zero-trust" ;
+  aether:domain "technology" ;
+  skos:prefLabel "Zero-Trust Security & Integration Architecture"@en ;
+  skos:altLabel "zero-trust"@en, "identity federation"@en, "sso"@en, "encryption"@en, "adapter gateway"@en, "technical debt"@en, "api schema"@en ;
+  skos:topConceptOf <urn:aether:enterprise:taxonomy> ;
+  skos:related <urn:aether:skos:gov:dora-cyber-resilience>, <urn:aether:skos:strat:ma-corporate-dev> ;
+  skos:definition "Enterprise zero-trust security controls, tenant isolation, cryptographic keys, and post-merger API gateways."@en .
+
+<urn:aether:skos:fin:capital-allocation> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "fin:capital-allocation" ;
+  aether:domain "finance" ;
+  skos:prefLabel "Capital Allocation & Treasury"@en ;
+  skos:altLabel "capital envelope"@en, "budget"@en, "free cash flow"@en, "fcf"@en, "cash conversion"@en, "treasury"@en ;
+  skos:topConceptOf <urn:aether:enterprise:taxonomy> ;
+  skos:related <urn:aether:skos:strat:ma-corporate-dev> ;
+  skos:definition "Enterprise capital deployment standards, hurdle rates, free cash flow preservation, and balance-sheet policy."@en .
+
+<urn:aether:skos:fin:capex-tranche-governance> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "fin:capex-tranche-governance" ;
+  aether:domain "finance" ;
+  skos:prefLabel "CAPEX/OPEX Tranche & Payback Gates"@en ;
+  skos:altLabel "40/60 tranche"@en, "payback"@en, "milestone tranche"@en, "capex"@en, "opex"@en, "11-month payback"@en, "hurdle rate"@en ;
+  skos:broader <urn:aether:skos:fin:capital-allocation> ;
+  skos:related <urn:aether:skos:tech:sovereign-ai-infra>, <urn:aether:skos:ops:emea-delivery-pods> ;
+  skos:definition "Staged release of infrastructure and growth capital gated by verified payback windows and ARR milestones."@en .
+
+<urn:aether:skos:fin:unit-economics-finops> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "fin:unit-economics-finops" ;
+  aether:domain "finance" ;
+  skos:prefLabel "Unit Economics, Gross Margin & EBITDA"@en ;
+  skos:altLabel "gross margin"@en, "ebitda"@en, "arr"@en, "nrr"@en, "net dollar retention"@en, "bps"@en, "finops"@en, "token cost"@en, "cogs"@en ;
+  skos:broader <urn:aether:skos:fin:capital-allocation> ;
+  skos:related <urn:aether:skos:tech:multicloud-elasticity>, <urn:aether:skos:strat:agentic-pricing> ;
+  skos:definition "SaaS and AI unit economics, 74%+ gross margin floors, compute FinOps, EBITDA expansion, and ARR quality."@en .
+
+<urn:aether:skos:ops:global-service-delivery> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "ops:global-service-delivery" ;
+  aether:domain "operations" ;
+  skos:prefLabel "Global Service Delivery & Onboarding"@en ;
+  skos:altLabel "onboarding"@en, "implementation"@en, "solutions engineering"@en, "customer operations"@en, "14-day onboarding"@en ;
+  skos:topConceptOf <urn:aether:enterprise:taxonomy> ;
+  skos:related <urn:aether:skos:ops:sla-reliability> ;
+  skos:definition "Enterprise customer onboarding workflows, solutions architecture delivery, and time-to-value standards."@en .
+
+<urn:aether:skos:ops:emea-delivery-pods> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "ops:emea-delivery-pods" ;
+  aether:domain "operations" ;
+  skos:prefLabel "EMEA Regional Tiger Pods & Go-To-Market Ops"@en ;
+  skos:altLabel "emea"@en, "dach"@en, "france"@en, "europe"@en, "tiger pods"@en, "regional rollout"@en, "procurement velocity"@en ;
+  skos:broader <urn:aether:skos:ops:global-service-delivery> ;
+  skos:related <urn:aether:skos:tech:sovereign-ai-infra>, <urn:aether:skos:gov:eu-data-residency>, <urn:aether:skos:strat:international-expansion> ;
+  skos:definition "Cross-functional European regional deployment squads accelerating regulated enterprise bookings and rollout."@en .
+
+<urn:aether:skos:ops:sla-reliability> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "ops:sla-reliability" ;
+  aether:domain "operations" ;
+  skos:prefLabel "Enterprise SLA, Vendor & Incident Governance"@en ;
+  skos:altLabel "sla"@en, "uptime"@en, "incident"@en, "churn"@en, "retention"@en, "vendor management"@en, "99.95%"@en, "runbook"@en ;
+  skos:broader <urn:aether:skos:ops:global-service-delivery> ;
+  skos:related <urn:aether:skos:tech:multicloud-elasticity>, <urn:aether:skos:gov:dora-cyber-resilience> ;
+  skos:definition "Contractual service-level commitments, vendor resilience tiers, escalation runbooks, and churn mitigation."@en .
+
+<urn:aether:skos:gov:eu-data-residency> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "gov:eu-data-residency" ;
+  aether:domain "governance" ;
+  skos:prefLabel "EU GDPR & Sovereign Data Residency"@en ;
+  skos:altLabel "gdpr"@en, "data residency"@en, "schrems"@en, "pii"@en, "data sovereignty"@en, "eu boundary"@en, "dpa"@en ;
+  skos:topConceptOf <urn:aether:enterprise:taxonomy> ;
+  skos:related <urn:aether:skos:tech:sovereign-ai-infra>, <urn:aether:skos:ops:emea-delivery-pods> ;
+  skos:definition "Binding European data residency, GDPR processor obligations, in-region telemetry retention, and DPA controls."@en .
+
+<urn:aether:skos:gov:dora-cyber-resilience> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "gov:dora-cyber-resilience" ;
+  aether:domain "governance" ;
+  skos:prefLabel "DORA & Financial Sector Operational Resilience"@en ;
+  skos:altLabel "dora"@en, "ict risk"@en, "iso 27001"@en, "soc 2"@en, "regulatory audit"@en, "exit strategy"@en, "regulated banking"@en ;
+  skos:broader <urn:aether:skos:gov:eu-data-residency> ;
+  skos:related <urn:aether:skos:tech:security-zero-trust>, <urn:aether:skos:ops:sla-reliability> ;
+  skos:definition "EU Digital Operational Resilience Act (DORA) ICT third-party requirements, audit rights, and multi-cloud exit plans."@en .
+
+<urn:aether:skos:gov:ai-safety-governance> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "gov:ai-safety-governance" ;
+  aether:domain "governance" ;
+  skos:prefLabel "EU AI Act, Model Risk & ACL Governance"@en ;
+  skos:altLabel "eu ai act"@en, "zero-retention"@en, "acl"@en, "access control"@en, "human review"@en, "model governance"@en, "audit log"@en ;
+  skos:topConceptOf <urn:aether:enterprise:taxonomy> ;
+  skos:related <urn:aether:skos:tech:ai-platform> ;
+  skos:definition "AI model zero-retention policies, role-based knowledge ACLs, human-in-the-loop review, and EU AI Act compliance."@en .
+
+<urn:aether:skos:strat:ma-corporate-dev> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "strat:ma-corporate-dev" ;
+  aether:domain "corporate_strategy" ;
+  skos:prefLabel "M&A, Valuation & Post-Merger Integration"@en ;
+  skos:altLabel "acquisition"@en, "m&a"@en, "merger"@en, "due diligence"@en, "valuation"@en, "earnout"@en, "pmi"@en, "target"@en, "synergy"@en ;
+  skos:topConceptOf <urn:aether:enterprise:taxonomy> ;
+  skos:related <urn:aether:skos:fin:capital-allocation>, <urn:aether:skos:tech:security-zero-trust> ;
+  skos:definition "Board-restricted corporate development, acquisition target diligence, deal structuring, and 90-day PMI playbooks."@en .
+
+<urn:aether:skos:strat:agentic-pricing> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "strat:agentic-pricing" ;
+  aether:domain "corporate_strategy" ;
+  skos:prefLabel "Autonomous Agent Packaging & Outcome Pricing"@en ;
+  skos:altLabel "pricing"@en, "outcome-based"@en, "seat-based"@en, "execution credits"@en, "packaging"@en, "monetization"@en, "cannibalization"@en ;
+  skos:topConceptOf <urn:aether:enterprise:taxonomy> ;
+  skos:related <urn:aether:skos:fin:unit-economics-finops>, <urn:aether:skos:tech:ai-platform> ;
+  skos:definition "Hybrid platform-fee plus autonomous execution-credit monetization protecting baseline seat ARR."@en .
+
+<urn:aether:skos:strat:international-expansion> a skos:Concept ;
+  skos:inScheme <urn:aether:enterprise:taxonomy> ;
+  skos:notation "strat:international-expansion" ;
+  aether:domain "corporate_strategy" ;
+  skos:prefLabel "International Market & Enterprise ARR Strategy"@en ;
+  skos:altLabel "market expansion"@en, "pipeline"@en, "bookings"@en, "board strategy"@en, "annual plan"@en, "enterprise gtm"@en, "market share"@en ;
+  skos:topConceptOf <urn:aether:enterprise:taxonomy> ;
+  skos:related <urn:aether:skos:ops:emea-delivery-pods>, <urn:aether:skos:fin:capex-tranche-governance> ;
+  skos:definition "Multi-quarter geographic expansion targets, strategic enterprise segment positioning, and board OKRs."@en .
